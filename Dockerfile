@@ -6,6 +6,6 @@ FROM ubuntu:xenial
 RUN apt-get -y update && apt-get -y install zip unzip wget && apt-get -y build-dep mysql-server
 RUN mkdir maria && cd maria && wget https://github.com/MariaDB/server/archive/10.1.zip
 RUN cd maria && unzip 10.1.zip
-RUN cd maria && BUILD/autorun.sh \
+RUN cd maria/server-10.1 && BUILD/autorun.sh \
 ./configure --with-plugin-xtradb \
 make dist
